@@ -14,10 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'welcome']);
-
-Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
   Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'root']);
